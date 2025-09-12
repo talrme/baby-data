@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Milestone Tracker (Dev)</title>
+    <link rel="stylesheet" href="styles_dev.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Baby Milestone Tracker</h1>
+        <p class="subtitle">Track your little one's amazing journey of growth and discovery</p>
+        
+        <!-- Collapsible Filters -->
+        <div class="filters-section">
+            <div class="filters-header" onclick="toggleFilters()">
+                <h3>🔧 Filters & Settings</h3>
+                <span class="toggle-icon" id="toggle-icon">▼</span>
+            </div>
+            <div class="filters-content" id="filters-content">
+                <!-- Birthday Input -->
+                <div class="filter-group">
+                    <h4>👶 Baby's Birthday</h4>
+                    <div class="birthday-input">
+                        <input type="date" id="baby-birthday" value="2026-04-02" onchange="updateBirthday()">
+                        <button onclick="clearBirthday()" class="clear-btn">Clear</button>
+                    </div>
+                    <p class="birthday-info" id="birthday-info">Birthday set! Milestones will show actual dates based on 4/2/2026</p>
+                </div>
+                
+                <!-- Age Range Dual Slider -->
+                <div class="filter-group">
+                    <h4>📅 Age Range</h4>
+                    <div class="dual-slider-container">
+                        <div class="slider-wrapper">
+                            <input type="range" id="age-min" min="0" max="60" value="0" oninput="updateAgeRange()">
+                            <input type="range" id="age-max" min="0" max="60" value="60" oninput="updateAgeRange()">
+                        </div>
+                        <div class="slider-labels">
+                            <span id="age-min-display">0 months</span>
+                            <span id="age-max-display">60 months (5 years)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category Checkboxes -->
+                <div class="filter-group">
+                    <h4>🏷️ Categories</h4>
+                    <div class="category-checkboxes">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="category-physical" checked onchange="toggleCategory('physical')">
+                            <span class="checkmark"></span>
+                            🏃 Physical
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="category-language" checked onchange="toggleCategory('language')">
+                            <span class="checkmark"></span>
+                            🗣️ Language
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="category-cognitive" checked onchange="toggleCategory('cognitive')">
+                            <span class="checkmark"></span>
+                            🧠 Cognitive
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="category-social" checked onchange="toggleCategory('social')">
+                            <span class="checkmark"></span>
+                            👥 Social
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Results Count (only shown when filters are open) -->
+                <div class="results-info" id="results-info" style="display: none;">
+                    <p>Showing <span id="milestone-count">0</span> milestones</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="milestones-container">
+            <!-- Milestones will be dynamically generated -->
+        </div>
+    </div>
+    
+    <script src="script_dev.js"></script>
+</body>
+</html>

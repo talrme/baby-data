@@ -1,0 +1,517 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(-45deg, #ffeaa7, #fab1a0, #fd79a8, #74b9ff);
+    background-size: 400% 400%;
+    animation: pastelShift 8s ease-in-out infinite;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+@keyframes pastelShift {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.title {
+    text-align: center;
+    color: #2d3436;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.subtitle {
+    text-align: center;
+    color: #636e72;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Collapsible Filters */
+.filters-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.filters-header {
+    background: #74b9ff;
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.filters-header:hover {
+    background: #0984e3;
+}
+
+.filters-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.toggle-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.filters-content {
+    padding: 25px;
+    display: none;
+}
+
+.filters-content.active {
+    display: block;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0;
+}
+
+.filter-group h4 {
+    color: #2d3436;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-bottom: 2px solid #74b9ff;
+    padding-bottom: 5px;
+}
+
+/* Birthday Input */
+.birthday-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.birthday-input input[type="date"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    background: white;
+    transition: border-color 0.3s ease;
+}
+
+.birthday-input input[type="date"]:focus {
+    outline: none;
+    border-color: #74b9ff;
+}
+
+.clear-btn {
+    padding: 10px 15px;
+    background: #e17055;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+    background: #d63031;
+}
+
+.birthday-info {
+    font-size: 0.9em;
+    color: #636e72;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Dual Range Slider */
+.dual-slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.slider-wrapper {
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.slider-wrapper input[type="range"] {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+    pointer-events: none;
+}
+
+.slider-wrapper input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #74b9ff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    pointer-events: all;
+    position: relative;
+    z-index: 2;
+}
+
+.slider-wrapper input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #74b9ff;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    pointer-events: all;
+    position: relative;
+    z-index: 2;
+}
+
+.slider-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #74b9ff;
+    font-size: 0.9em;
+}
+
+/* Category Checkboxes */
+.category-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95em;
+    color: #2d3436;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox-label:hover {
+    background-color: #e8f4f8;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #74b9ff;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background-color: #74b9ff;
+    border-color: #74b9ff;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Results Info */
+.results-info {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: #e8f4f8;
+    border-radius: 10px;
+    color: #2d3436;
+    font-weight: bold;
+}
+
+/* Milestone Styling - Fixed Alignment */
+.milestone-container {
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.milestone-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.timeline-bar {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px 300px 120px;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transition: background 0.3s ease;
+    min-height: 80px;
+    gap: 20px;
+}
+
+.timeline-bar:hover {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+}
+
+.timeline-bar.active {
+    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+}
+
+.milestone-icon {
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.milestone-label {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2d3436;
+    display: flex;
+    align-items: center;
+}
+
+.milestone-category {
+    font-size: 0.8em;
+    color: #74b9ff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-visual {
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-range {
+    height: 100%;
+    background: linear-gradient(90deg, #74b9ff 0%, #0984e3 100%);
+    border-radius: 10px;
+    position: relative;
+}
+
+.timeline-range::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #0984e3;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.age-label {
+    font-size: 1em;
+    color: #636e72;
+    font-weight: bold;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Accordion Content */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: #f8f9fa;
+}
+
+.accordion-content.active {
+    max-height: 1000px;
+}
+
+.histogram-container {
+    padding: 25px;
+}
+
+.histogram-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2d3436;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.data-display {
+    margin-bottom: 20px;
+}
+
+.timeline-bar-mini {
+    height: 15px;
+    background: #e9ecef;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-range-mini {
+    height: 100%;
+    background: linear-gradient(90deg, #74b9ff 0%, #0984e3 100%);
+    border-radius: 8px;
+}
+
+.milestone-info {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.milestone-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.source-link {
+    color: #74b9ff;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.source-link:hover {
+    color: #0984e3;
+    text-decoration: underline;
+}
+
+/* Date Display in Accordion */
+.date-display {
+    background: #e8f4f8;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: center;
+    border-left: 4px solid #74b9ff;
+}
+
+.midpoint-date {
+    font-size: 1.1em;
+    color: #2d3436;
+    margin-bottom: 8px;
+}
+
+.midpoint-date strong {
+    color: #74b9ff;
+}
+
+.approximation-note {
+    font-size: 0.9em;
+    color: #636e72;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 2em;
+    }
+    
+    .category-checkboxes {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-bar {
+        grid-template-columns: 50px 1fr 80px 200px 100px;
+        gap: 10px;
+        padding: 15px;
+        min-height: auto;
+    }
+    
+    .milestone-icon {
+        font-size: 1.5em;
+    }
+    
+    .milestone-label {
+        font-size: 1.1em;
+    }
+    
+    .milestone-category {
+        font-size: 0.7em;
+    }
+    
+    .age-label {
+        font-size: 0.9em;
+    }
+}
