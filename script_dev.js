@@ -13,6 +13,72 @@ const milestones = [
         source: 'https://www.cdc.gov/ncbddd/actearly/milestones/index.html'
     },
     {
+        id: 'looks-face',
+        icon: '👀',
+        name: 'Looks at Your Face',
+        ageRange: '0-8 weeks',
+        startAge: 0,
+        endAge: 8,
+        category: 'social',
+        description: 'Baby starts spending more time looking at faces, especially familiar caregivers. Early face-gazing is one of the first building blocks of social connection.',
+        source: 'https://www.cdc.gov/act-early/milestones/2-months.html'
+    },
+    {
+        id: 'reacts-loud-sounds',
+        icon: '🔔',
+        name: 'Reacts to Loud Sounds',
+        ageRange: '0-8 weeks',
+        startAge: 0,
+        endAge: 8,
+        category: 'language',
+        description: 'Baby startles, quiets, blinks, moves, or otherwise reacts when there is a loud sound. This is an early communication and hearing-response milestone.',
+        source: 'https://www.cdc.gov/act-early/milestones/2-months.html'
+    },
+    {
+        id: 'watches-movement',
+        icon: '👁️',
+        name: 'Watches You Move',
+        ageRange: '4-8 weeks',
+        startAge: 4,
+        endAge: 8,
+        category: 'cognitive',
+        description: 'Baby begins visually following a caregiver or interesting object for a short time. This reflects early attention, vision, and learning.',
+        source: 'https://www.cdc.gov/act-early/milestones/2-months.html'
+    },
+    {
+        id: 'opens-hands',
+        icon: '🖐️',
+        name: 'Opens Hands Briefly',
+        ageRange: '4-8 weeks',
+        startAge: 4,
+        endAge: 8,
+        category: 'physical',
+        description: 'Baby begins opening their hands briefly instead of keeping them tightly fisted all the time. This is an early fine-motor milestone.',
+        source: 'https://www.cdc.gov/act-early/milestones/2-months.html'
+    },
+    {
+        id: 'head-up-tummy',
+        icon: '💪',
+        name: 'Holds Head Up During Tummy Time',
+        ageRange: '4-8 weeks',
+        startAge: 4,
+        endAge: 8,
+        category: 'physical',
+        description: 'During supervised tummy time, baby can lift and hold their head up briefly. This is an early sign of neck and upper-body strength.',
+        source: 'https://www.cdc.gov/act-early/milestones/2-months.html'
+    },
+    {
+        id: 'coos',
+        icon: '🎶',
+        name: 'Coos and Gurgles',
+        ageRange: '6-12 weeks',
+        startAge: 6,
+        endAge: 12,
+        category: 'language',
+        description: 'Baby starts making soft vowel-like sounds such as coos and gurgles. These early sounds are the beginning of back-and-forth communication.',
+        source: 'https://www.healthychildren.org/English/ages-stages/baby/Pages/Developmental-Milestones-3-Months.aspx'
+    },
+    {
         id: 'roll',
         icon: '🔄',
         name: 'Rolls Over',
